@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>JavaScript Class</h2>
+
+    <p id="student1"></p>
+    <p id="student2"></p>
+    <p id="student3"></p>
+
+    <script>
+      class student {
+        constructor(name, birthYear) {
+          this.name = name;
+          this.birthYear = birthYear;
+        }
+        age() {
+          let date = new Date();
+          return date.getFullYear() - this.birthYear;
+        }
+      }
+
+      //  OBJECT CREATION
+      saf = new student("Safwan", 2011);
+      saj = new student("Sajid", 2011);
+      afn = new student("Afnan", 2010);
+
+      document.getElementById("student1").innerHTML = `I am ${saf.name} and
+        I was born in ${saf.birthYear} and my age is ${saf.age()}`;
+
+      document.getElementById("student2").innerHTML = `I am ${saj.name} and
+        I was born in ${saj.birthYear} and my age is ${saj.age()}`;
+
+      document.getElementById("student3").innerHTML = `I am ${afn.name} and
+        I was born in ${afn.birthYear} and my age is ${afn.age()}`;
+    </script>
+  </body>
+</html>
