@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        color: rgb(131, 167, 182);
+        background-color: black;
+        text-shadow: 2px 3px 7px rgb(49, 8, 199);
+        font-size: 23px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h2>JavaScript Class Inheritance and Static Method</h2>
+      <p id="details"></p>
+      <img
+        src="https://www.senna.com/wp-content/uploads/2017/12/Hero-ext_front-3_4_dark__doors_FINAL-1.jpg-2-1-scaled.jpg"
+        alt=""
+        height="300px"
+      />
+      <p id="details1"></p>
+      <img
+        src="https://imgd.aeplcdn.com/664x374/n/cw/ec/176129/m4-competition-exterior-right-front-three-quarter-3.jpeg?isig=0&q=80"
+        alt=""
+        height="300px"
+      />
+      <p id="details2"></p>
+      <img
+        src="https://www.autocar.co.uk/sites/autocar.co.uk/files/porsche-911-gt3-review-2024-023-front-static.jpg"
+        alt=""
+        height="350px"
+      />
+      <p id="details3"></p>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0833%29.jpg/1200px-GIMS_2019%2C_Le_Grand-Saconnex_%28GIMS0833%29.jpg"
+        alt=""
+        height="350px"
+      />
+      <p id="details4"></p>
+      <img
+        src="https://www.pmw-magazine.com/wp-content/uploads/2023/04/01BUGATTI_Bolide-Design-e1682419347378.jpg"
+        alt=""
+        height="300px"
+      />
+      <p id="greetings"></p>
+
+      <script>
+        class vehicle {
+          constructor(brandName) {
+            this.brandName = brandName;
+          }
+          static hello() {
+            return "Hello";
+          }
+          details() {
+            return `Brand Name :${this.brandName}<br>`;
+          }
+        }
+
+        class model extends vehicle {
+          constructor(brandName, model) {
+            super(brandName);
+            this.model = model;
+          }
+          show() {
+            return this.details() + "Model : " + this.model;
+          }
+        }
+        var mcLaren = new model("McLaren", "Senna");
+        var BMW = new model("BMW", "M4 Competition");
+        var Porsche = new model("Porsche", "911 gt3");
+        var koenigsegg = new model("Koenigsegg", "Jesko");
+        var bugatti = new model("Bugatti", "Bolide");
+
+        document.getElementById("details").innerHTML = mcLaren.show();
+        document.getElementById("details1").innerHTML = BMW.show();
+        document.getElementById("details2").innerHTML = Porsche.show();
+        document.getElementById("details3").innerHTML = koenigsegg.show();
+        document.getElementById("details4").innerHTML = bugatti.show();
+        document.getElementById("greetings").innerHTML = vehicle.hello();
+      </script>
+    </center>
+  </body>
+</html>
